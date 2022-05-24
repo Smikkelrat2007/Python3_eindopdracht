@@ -1,6 +1,9 @@
 nummers = {"albert" : "1" , "berta" : "2", "clara" : "3"}
+global key_list
+global val_list
 key_list = list(nummers.keys())
 val_list = list(nummers.values())
+
 
 def print_lijst():
   for key, value in nummers.items():
@@ -12,17 +15,21 @@ def nieuw_contact():
   nummers[nieuwecontactnaam] = nieuwenummervancontact
 
 def verwijder_contact():
+  key_list = list(nummers.keys())
+  val_list = list(nummers.values())
   verwijderr = input('wil je het contact verwijderen met behulp van de naam van het contact of met het nummer van het contact??? \n1. met het nummer \n2. met de naam')
   if verwijderr == "2":
-    keyver = input('wat is het nummer die je wilt verwijderen?')
+    keyver = input('wat is de naam die je wilt verwijderen?')
     del nummers[keyver]
   if verwijderr == "1":
-    valver = input('wat is het naam die je wilt verwijderen?')
+    valver = input('wat is het nummer die je wilt verwijderen?')
     position = val_list.index(valver)
     keyver = key_list[position]
     del nummers[keyver]
 
 def bewerk_contact():
+  key_list = list(nummers.keys())
+  val_list = list(nummers.values())
   connabew = input('wil je het contact bewerken met behulp van de naam van het contact of met het nummer van het contact??? \n1. met de naam \n2. met het nummer')
   if connabew == "1":
     keybew = input('wat is de naam die je wilt bewerken?')
